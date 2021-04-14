@@ -18,14 +18,14 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load enviroment vars from .env
-load_dotenv(os.path.join(str(BASE_DIR), '.env')
+load_dotenv(os.path.join(str(BASE_DIR), '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -94,10 +94,10 @@ WSGI_APPLICATION = 'myapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv.get('DBNAME'),
-        'USER': os.getenv.get('DBUSER'),
-        'PASSWORD': os.getenv.get('DBPASSWORD'),
-        'HOST': os.getenv.get('DBHOST'),
+        'NAME': os.environ.get('DBNAME'),
+        'USER': os.environ.get('DBUSER'),
+        'PASSWORD': os.environ.get('DBPASSWORD'),
+        'HOST': os.environ.get('DBHOST'),
         'PORT': '',
     }
 }
